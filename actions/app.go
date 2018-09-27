@@ -4,7 +4,6 @@ import (
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/buffalo/middleware"
 	"github.com/gobuffalo/envy"
-	tokenauth "github.com/gobuffalo/mw-tokenauth"
 	"github.com/gobuffalo/x/sessions"
 	"github.com/ossn/fixme_backend/models"
 	"github.com/rs/cors"
@@ -49,7 +48,7 @@ func App() *buffalo.App {
 		app.POST("/login", AdminsResource{}.Login)
 
 		admin := app.Group("/admin")
-		admin.Use(tokenauth.New(tokenauth.Options{}))
+		//admin.Use(tokenauth.New(tokenauth.Options{}))
 
 		admin.Resource("/projects", ProjectsResource{})
 		admin.Resource("/repositories", RepositoriesResource{})

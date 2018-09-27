@@ -24,6 +24,7 @@ type Project struct {
 	Link          string        `json:"link" db:"link"`
 	SetupDuration nulls.String  `json:"setup_duration" db:"setup_duration"`
 	IssuesCount   int           `json:"issues_count" db:"issues_count"`
+	HFOSS         bool			`json:"HFOSS" db:"HFOSS"`	
 	Tags          slices.String `json:"tags" db:"tags"`
 }
 
